@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voie un vehicule{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/detail.css') }}" rel="stylesheet"/>     
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/detail.js') }}"></script> 
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-5">
+    <h1>Bienvenue sur le véhicule {{vehicule}}</h1>
+    {# 
+    {% if planete == 'mars'  %}
+        <img src="{{ asset('image/mars.jpg')}}" alt="{{planete}} image" style="max-width: 250px;">
+    {% elseif planete == 'pluton' %}
+        <img src="{{ asset('image/pluton.jpg')}}" alt="{{planete}} image" style="max-width: 250px;">
+    {% else %}
+        <img src="{{ asset('image/saturne.jpg')}}" alt="{{planete}} image" style="max-width: 250px;">
+    {% endif %}
+    #}
+<img src="{{ asset('image/' ~ vehicule ~ '.jpg')}}" alt="{{vehicule}} image" style="max-width: 250px;">
+
+
+    <div>
+        <a href="{{ path('vehicule') }}">
+            <i class="fas fa-globe-europe"></i>
+            Voir les véhicules
+        </a>
+    </div>
+</div>
+{% endblock %}

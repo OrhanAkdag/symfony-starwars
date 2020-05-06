@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page des véhicules!{% endblock %}
+
+{% block body %}
+
+<div class="container my-5">
+    <h1>Liste des véhicules</h1>
+    <ul class="list-group">
+        {% for veh in vehicule %}
+            <li class="list-group-item">
+                <a href="{{ path('detail-vehicule',{'vehiculeName' : veh}) }}">
+                    {{veh}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div>
+        <a href="{{ path('add-vehicule') }}">
+            <i class="fas fa-plus-circle"></i>
+            Ajouter un véhicule
+        </a>
+    </div>
+</div>
+{% endblock %}

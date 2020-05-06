@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page des planètes!{% endblock %}
+
+{% block body %}
+
+<div class="container my-5">
+    <h1>Liste des planètes</h1>
+    <ul class="list-group">
+        {% for pla in planet %}
+            <li class="list-group-item">
+                <a href="{{ path('detail-planet',{'planetName' : pla}) }}">
+                    {{pla}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div>
+        <a href="{{ path('addplanet') }}">
+            <i class="fas fa-plus-circle"></i>
+            Ajouter une planete
+        </a>
+    </div>
+</div>
+{% endblock %}
